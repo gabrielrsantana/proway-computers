@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { produtos, IProduto } from '../produtos';
+
+
 
 @Component({
   selector: 'app-produtos',
@@ -6,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produtos.component.css']
 })
 export class ProdutosComponent implements OnInit {
+//produtos é o vetor dos produtos
+//iProduto é a interface
+produtos: IProduto[] = produtos;
 
   constructor() { }
 
