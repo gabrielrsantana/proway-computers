@@ -14,6 +14,7 @@ produtos: IProduto[] = produtos;
   }
 
   getOne(produtoId:number){
-    return this.produtos.find(produto => produto.id = produtoId);
+    console.log("entrou em getOne(id)");
+    return this.produtos.find(produto => produto.id === produtoId);
   }
 }

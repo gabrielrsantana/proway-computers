@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IProduto } from 'src/app/produtos';
 import { ProdutosService } from 'src/app/produtos.service';
 
 @Component({
@@ -8,10 +10,19 @@ import { ProdutosService } from 'src/app/produtos.service';
 })
 export class DetalhesProdutoComponent implements OnInit {
 
-  //insejtando o servico de produtos..no
-  constructor(private produtosService: ProdutosService) { }
+  produto: IProduto | undefined;
+  quantidade =1;
+  
+  //injetando o servico de produtos..no
+  //e serviço de rota para ver os detalhes do produto
+  constructor(private produtosService: ProdutosService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+    const produtoId = Number(routeParams.get("id"));
+    //converte a string para numero,quando pega da rota vem como string
+    this.produto = this.produtosService.getOne(produtoId);
+    console.log(this.produto?.descricao);
   }
 
-}
+} 

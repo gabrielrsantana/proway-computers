@@ -12,7 +12,7 @@ import { ProdutosService } from '../produtos.service';
 export class ProdutosComponent implements OnInit {
 //produtos é o vetor dos produtos
 //iProduto é a interface
-produtos: IProduto[] | undefined = produtos;
+produtos: IProduto[] | undefined; 
 
   constructor(private produtosService: ProdutosService) { }
 
