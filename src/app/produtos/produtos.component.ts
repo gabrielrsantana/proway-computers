@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { produtos, IProduto } from '../produtos';
+import { ProdutosService } from '../produtos.service';
 
 
 
@@ -11,11 +12,12 @@ import { produtos, IProduto } from '../produtos';
 export class ProdutosComponent implements OnInit {
 //produtos é o vetor dos produtos
 //iProduto é a interface
-produtos: IProduto[] = produtos;
+produtos: IProduto[] | undefined = produtos;
 
-  constructor() { }
+  constructor(private produtosService: ProdutosService) { }
 
   ngOnInit(): void {
+    this.produtos = this.produtosService.getAll();
   }
 
 }
