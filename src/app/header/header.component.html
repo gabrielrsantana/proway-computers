@@ -12,7 +12,8 @@
                     <a routerLink="carrinho">
                         <i class="fa-solid fa-cart-shopping"></i>
                         Carrinho
-                       <!-- <span class="badge-carrinho">{{ carrinhoService.obtemCarrinho().length }}</span>  -->
+                        <!-- porque o servico do carrinho e publico,pode chamar direto a funcao lenght -->
+                       <span class="badge-carrinho">{{ carrinhoService.obtemCarrinho().length }}</span> 
                     </a>
                 </li>
                 <li><a routerLink="contato">Contato</a></li>
