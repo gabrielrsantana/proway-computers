@@ -5,7 +5,7 @@ import { IProduto,produtos } from './produtos';
   providedIn: 'root'
 })
 export class ProdutosService {
-produtos: IProduto[] = produtos;
+produtos: IProduto[] = produtos;//produtos vem do arquivo .ts
 
   constructor() { }
 
@@ -14,7 +14,7 @@ produtos: IProduto[] = produtos;
   }
 
   getOne(produtoId:number){
-    console.log("entrou em getOne(id)");
+    //console.log("entrou em getOne(id)");
     return this.produtos.find(produto => produto.id === produtoId);
   }
 }

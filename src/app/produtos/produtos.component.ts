@@ -18,6 +18,7 @@ produtos: IProduto[] | undefined;
 
   ngOnInit(): void {
     this.produtos = this.produtosService.getAll();
+    console.log("tamanho produtos="+this.produtos.length);
   }
 
 }

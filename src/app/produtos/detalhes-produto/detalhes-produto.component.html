@@ -6,15 +6,15 @@
     
    <div class="product-description__container">
     <h2 class="product__name">{{ produto?.descricao }}</h2>
-    <h3 class="product__price">{{ produto?.preco }}</h3>
+    <h3 class="product__price">{{ produto?.preco | currency:"BRL"}}</h3>
     <p>Estoque disponivel</p>
     <label>  
-       quantidade:
+       quantidade: 
        <!-- para alterar a quantidade dentro da classe -->
        <input type="number" [(ngModel)]="quantidade"> Unidade(s)
     </label>
     <p class="product__avaiability">
-    {{ produto?.quantidadeEstoque}} unidade(s) em estoque.
+    {{ produto?.quantidadeEstoque }} unidade(s) em estoque.
     </p> 
     <button>Adicionar ao carrinho</button>
    </div> 
