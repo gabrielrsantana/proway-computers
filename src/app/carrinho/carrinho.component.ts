@@ -8,7 +8,7 @@ import { IProdutoCarrinho } from '../produtos';
   styleUrls: ['./carrinho.component.css']
 })
 export class CarrinhoComponent implements OnInit {
-
+   total=0;
   itensCarrinho: IProdutoCarrinho[] =[];
 
   constructor(public carrinhoService: CarrinhoService) { }
@@ -20,4 +20,9 @@ removerProdutoCarrinho(produtoId: number){
   this.itensCarrinho = this.itensCarrinho.filter( item => item.id !== produtoId );
   this.carrinhoService.removerProdutoCarrinho(produtoId);
 }
+calculartotal(){
+  this.total = this.itensCarrinho.reduce((prev,curr)=> prev+(curr.preco * curr.quantidade),0)
+
+}
+
 }

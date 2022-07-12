@@ -1,10 +1,10 @@
 <h2 class="cart-title">Carrinho</h2>
-<div>
+<div *ngIf="itensCarrinho.length > 0;else semProduto"> 
     <ul>
         <li *ngFor="let itemCarrinho of itensCarrinho">
             <img [src]="itemCarrinho.imagem">
             <p>{{ itemCarrinho.descricao }}</p>
-            <p>{{ itemCarrinho.preco}}</p>
+            <p>{{ itemCarrinho.preco | currency:"BRL"}}</p>
             <label>
                 quantidade:            
                 <input type="number" [(ngModel)]="itemCarrinho.quantidade" > 
@@ -12,6 +12,7 @@
             </label> 
         </li>
     </ul>
-    <h2 class="cart-total">Total: R$ 1300</h2>
+    <h2 class="cart-total">Total: {{ total }}</h2>
     <button class="buy-button">Comprar</button>
 </div>
+<ng-template #semProduto>nenhum produto foi adicionao ao carrinho.</ng-template> 
