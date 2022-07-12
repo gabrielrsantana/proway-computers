@@ -8,7 +8,7 @@
             <label>
                 quantidade:            
                 <input type="number" [(ngModel)]="itemCarrinho.quantidade" > 
-                <button class="remove-button"><i class="fa-solid fa-xmark"></i></button> 
+                <button class="remove-button" (click)="removerProdutoCarrinho(itemCarrinho.id)"><i class="fa-solid fa-xmark"></i></button> 
             </label> 
         </li>
     </ul>
