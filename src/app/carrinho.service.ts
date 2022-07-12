@@ -11,8 +11,8 @@ itens: IProdutoCarrinho[]= [];
 
 obtemCarrinho(){
 //salvar carrinho mesmo se sair da pagina
-return JSON.parse(localStorage.getItem("carrinho")|| "");//vem como string. O JSON.parse (@param text — A valid JSON string), faz com string,mas se nao tiver nada undefined, usa-se
-//
+this.itens= JSON.parse(localStorage.getItem("carrinho")|| "");//vem como string. O JSON.parse (@param text — A valid JSON string), faz com string,mas se nao tiver nada undefined, usa-se
+return this.itens;
 }
 adicionarAocarrinho(produto:IProdutoCarrinho){
   this.itens.push(produto);
