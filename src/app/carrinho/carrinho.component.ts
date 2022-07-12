@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from '../carrinho.service';
 import { IProdutoCarrinho } from '../produtos';
-
+//import { FormsModule } from '@angular/forms'; 
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',

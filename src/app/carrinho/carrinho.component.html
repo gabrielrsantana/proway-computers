@@ -6,11 +6,10 @@
             <p>{{ itemCarrinho.descricao }}</p>
             <p>{{ itemCarrinho.preco}}</p>
             <label>
-                quantidade:
-                <input type="number" [(ngModel)]="itemCarrinho.quantidade"> <!--pra usar isso,tem que oimportart FormsModule -->
-                <!--depois add fontawesome -->
-                <button class="remove-button"><i class="fa-solid fa-xmark"></i></button>
-            </label>
+                quantidade:            
+                <input type="number" [(ngModel)]="itemCarrinho.quantidade" > 
+                <button class="remove-button"><i class="fa-solid fa-xmark"></i></button> 
+            </label> 
         </li>
     </ul>
     <h2 class="cart-total">Total: R$ 1300</h2>
