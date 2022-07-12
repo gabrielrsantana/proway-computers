@@ -6,7 +6,8 @@ import { NaoEncontradaComponent } from './nao-encontrada/nao-encontrada.componen
 //usando lazy Loading para os produtos
 const routes: Routes =[
   { path: 'produtos', loadChildren: () => import('./produtos/produtos.module').then(m => m.ProdutosModule) },
-  { path: "", redirectTo: "produtos", pathMatch: "full"}, //quando colocar raiz so site ele direciona pro /produtos
+  { path: "", redirectTo: "produtos", pathMatch: "full"},
+  { path: 'carrinho', loadChildren: () => import('./carrinho/carrinho.module').then(m => m.CarrinhoModule) }, //quando colocar raiz so site ele direciona pro /produtos
   { path:"**", component: NaoEncontradaComponent} 
 ];
 
